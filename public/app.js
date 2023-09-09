@@ -29,7 +29,7 @@
                    alert(email.value)
 
                    //make fetch request
-                   const result = await fetch('http:localhost:7070/api/login',{
+                   const result = await fetch('http://localhost:7070/api/login',{
                     method: 'POST',
                     headers : {
                         'Accept': 'application/json',
@@ -52,7 +52,7 @@
 
                        // remove error message after 3 seconds
                        setTimeout(() => {
-                        $(error).fadeOut('slow');
+                        $(error).fadeOut('2000');
                     }, 3000);
 
                     return;
@@ -61,13 +61,13 @@
                   if(result.status == 200){
                     //getting user back from server
                     const response = await result.json();
-                    let name = response.name;
-                    let token = response.token;
+                    const {  name } =response;
 
 
                     //set new storage
                     localStorage.setItem('name', name);
-                    localStorage.setItem('tokenKey', token);
+
+
 
                     window.location.href = `./dashboard.html?name=${name}`;
                   }

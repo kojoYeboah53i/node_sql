@@ -24,10 +24,13 @@ router.post('/user', async (req, res) => {
              email : req.body.email,
              password: req.body.password,
              });
-             const token = {
-                tokenKey : "7-11ee-be56-0242ac120002 "
+           
+            const user = await knex('users').where({ email }).first();
+            const token = {
+                tokenKey : "7-11ee-be56-0242ac120002 ",
+                user
              }
-             return res.status(201).json({ id: userId[0],  email }, token);
+             return res.status(201).json(token);
         }
 
     } catch (error) {
@@ -87,12 +90,13 @@ router.post('/user', async (req, res) => {
       if(employee){
         res.status(409).json({ message: 'email already exist' });
       } else{
-        const employeeId = await knex('users').insert({
+        const employeeId = await knex('employees').insert({
              name : req.body.name,
              email : req.body.email,
              job_title: req.body.job_title,
              });
-             return res.status(201).json({ id: employeeId[0], name,  email, job_title });
+             const currentEmployee = await knex('employees').where({ email }).first();
+             return res.status(201).json(currentEmployee);
         }
 
     } catch (error) {
@@ -101,14 +105,14 @@ router.post('/user', async (req, res) => {
     }
   });
 
-  // Update a employee by ID
-  router.put('/employee/:id', async (req, res) => {
+  // Update a employee by ID  patch http://localhost:7070/api/employee/1
+  router.patch('/employee/:id', async (req, res) => {
     try {
       const { id } = req.params;
       const updatedEmployee = req.body; // Assuming you send updated user data in the request body
       
-      // Update the user in the database
-      const result = await knex('users').where({ id }).update(updatedEmployee);
+      // Update the employee in the database
+      const result = await knex('employees').where({ id }).update(updatedEmployee);
       
       if (result) {
         // employee updated successfully
