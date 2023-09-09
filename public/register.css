@@ -23,7 +23,7 @@
   form {
     margin-top: 4rem;
     width: 100%;
-    height: 80vh;
+    height: 91vh;
     padding: 20px;
     background-color: var(--color-primary-variant); 
     border-radius: 10px;
@@ -41,7 +41,7 @@
  
   form .brand{
     position: absolute;
-    top: 2rem;
+    top: 1rem;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -55,19 +55,18 @@
     width: 12rem;
     height: 12em;
     object-fit: cover;
-    scale: 0.7;
+    scale: 0.6;
  }
   form .error{
+ 
     width: 92%;
     height: 3rem;
-    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(181, 157, 157);
-    
     margin: 0 auto;
-    top: 1rem;
+    top: 1.6rem;
     position: relative;
     padding: 1rem 0.5rem;
     border-radius: 10px;
@@ -91,7 +90,7 @@
  
   form .form-group{
     width: 100%;
-    height: 10rem;
+    height: 40vh;
     margin-top: 2rem;
     display: block;
     text-align: center;
@@ -163,7 +162,7 @@
     margin: 0 auto;
     margin-top: 1rem;
     width: 100%;
-     cursor: pointer;
+    cursor: pointer;
  }
  
   form small a {
@@ -178,7 +177,7 @@
  
 
  .wallpaper{
-    background-image: url("./img/background.jpg");
+    background-image: url("./img/background-smile.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
