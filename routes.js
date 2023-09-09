@@ -73,7 +73,7 @@ router.get('/employees', async (req, res) => {
 })
 
 //create new employee
-router.post('/user', async (req, res) => {
+router.post('/employee', async (req, res) => {
     try {
        
         //deconstruct req body object
