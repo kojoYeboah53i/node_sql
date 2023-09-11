@@ -133,7 +133,7 @@ router.post('/employee', async (req, res) => {
       const { id } = req.params;
       
       // Delete the user from the database
-      const result = await knex('employee').where({ id }).del();
+      const result = await knex('employees').where({ id }).del();
       
       if (result) {
         // employee deleted successfully
