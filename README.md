@@ -1,6 +1,12 @@
 # node_sql
  nodejs application connected to an sql database
 
+## make a migrations file
+
+- knex migrate:make create_users_table
+- knex migrate:make create_users_table --knexfile config/knexfile.js --cwd .
+- knex migrate:latest --knexfile config/knexfile.js
+
 ## SQL
 
 - sliqte3
