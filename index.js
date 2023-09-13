@@ -6,9 +6,12 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
 const routes = require('./routes')
+require('dotenv').config();
+
+const objection = require('./router/routes')
     
 
-const PORT = 7070;  //server port
+const PORT = process.env.PORT;  //server port
 
 //middleware
 //To parse json data
@@ -30,6 +33,7 @@ app.get('/', (req, res) => {
 
 //api
 app.use('/api', routes)
+app.use('/shop', objection)
 
   //start app on this port
   app.listen(PORT, () => {
