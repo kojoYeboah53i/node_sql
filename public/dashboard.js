@@ -30,3 +30,37 @@ window.addEventListener('load', () => {
         sidebar.classList.toggle('sidebar-full');
     });
 });
+
+  // logout
+  const logout = document.querySelector(".logout");
+  logout.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const confirmed = confirm("are u sure u want to logout");
+
+
+      //if true then logout user 
+      if(confirmed == true){
+          window.location.href = "index.html";
+          /*
+          let token = localStorage.getItem('tokenKey');
+          console.log(token)
+          if(token != ""){
+              
+              const result = await fetch('http://localhost:5151/api/logout', {
+                  method: 'POST',
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  mode : 'cors'
+               })
+
+          if(result.status == 200){
+
+              localStorage.removeItem('tokenKey');
+              
+          }
+      } */
+      
+  }
+      // return;
+  });

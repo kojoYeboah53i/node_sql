@@ -11,6 +11,6 @@
 ## backend
 
 - admin dashboard
-- add/remove new product
+- [x] add/remove new product
 - transaction
 - delivery/ logistics
