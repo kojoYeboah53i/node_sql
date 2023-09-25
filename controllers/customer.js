@@ -43,7 +43,8 @@ exports.CreateCustomer = async (req, res) => {
             //create
             const customer = await Customer.query().insertGraph({
                 name: req.body.name,
-                city: req.body.city
+                city: req.body.city,
+                token: req.body.token
             });
             if(!customer){
                 throw new Error("check db connection, customer table doesn't exit")

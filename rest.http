@@ -25,3 +25,9 @@ Content-Type: application/json
     "email" : "yeboah@mail.com",
     "password" :"admin1234"
 }
+
+###
+GET https://kojoyeboah53i-d962a2da663c.herokuapp.com/api/ordabl/employer/1
+
+###
+GET http://localhost:9222/all-products

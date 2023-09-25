@@ -9,7 +9,7 @@ exports.up = function(knex) {
     table.integer('price').notNullable();
     table.string('description').notNullable();
     table.integer('stocks').notNullable();
-    table.string('image').notNullable();
+    table.string('image').notNullable(); //path
     table.timestamps(true, true);
     });
   
