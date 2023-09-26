@@ -52,10 +52,3 @@ exports.seed = function (knex) {
       });
   };
 
-  /*
-  table.string('name').notNullable();
-  table.integer('price').notNullable();
-  table.string('description').notNullable();
-  table.integer('stocks').notNullable();
-  table.string('image').notNullable();
-  */

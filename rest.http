@@ -31,3 +31,22 @@ GET https://kojoyeboah53i-d962a2da663c.herokuapp.com/api/ordabl/employer/1
 
 ###
 GET http://localhost:9222/all-products
+###
+GET http://localhost:9222/api/products
+
+###
+POST http://localhost:9222/shop/v1/customer
+Content-Type: application/json
+
+{
+    "name" : "Isaac Yeboah",
+    "city" : "Accra",
+    "token" :"admin1234sfdsfsfd454632122345%^&*£"
+}
+
+###
+GET http://localhost:9222/shop/v1/products
+###
+GET http://localhost:9222/shop/v1/customers
+
+

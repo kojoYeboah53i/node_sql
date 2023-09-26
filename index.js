@@ -80,7 +80,7 @@ app.post('/product-upload', async (req, res) => {
         price : price,
         stocks : stock,
         description : description,
-        image: filename
+        image: process.env.APP_URL+'uploads/' +filename
       });
       return product;
       
@@ -91,19 +91,7 @@ app.use('/api', routes)
 app.use('/shop', objection)
 // app.use('/product', product)
 
-app.get('/all-products', async (req, res) => {
-  try {
-    const products = await knex('products').select('*');
-    if(!products){
-        throw new Error('failed to get product from db')
-    }
-    res.status(200).json(products)
-} catch (error) {
-    console.log(error);
-    res.status(500).send('Server error'); //error
-  }
 
-})
 //start app on this port
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

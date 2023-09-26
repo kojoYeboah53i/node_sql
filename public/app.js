@@ -79,7 +79,12 @@
         
         
             });
-        
+
+            const result = fetch('https://random-words-api.vercel.app/word')
+             let response = result.json();
+
+             let title = response.word.substring(0, 8)
+            //  title = title.substring(0, 8)
         
         });
 

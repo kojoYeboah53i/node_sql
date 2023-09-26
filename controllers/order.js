@@ -6,8 +6,28 @@ exports.getOrder = async (req, res) => {
 }
 
 exports.getOrders = async (req, res) => {
+    try{
 
     //get Orders
+    const { customer_id } = req.body;
+
+   if(!customer_id){
+    return res.status(409).json({message : 'request must have have customer_id '})
+   }
+    const order  = await Order.query()
+    .where('customer_id', customer_id)
+     .orderBy('id');
+     
+     if(!order){
+         throw new Error('customer id deosnt exit')
+        }
+    res.status(200).json({message : 'orders from customer', order} );
+    
+    }catch (error) {
+    console.log(error);
+    res.status(500).send('Server error'); //error
+}
+
 }
 
 
@@ -16,10 +36,10 @@ exports.CreateOrder = async (req, res) => {
     //create
     try {
         // const {name , city} = req.body;
-        if(req.body.product != '' || req.body.customer_id != ''){
+        if(req.body.product_id != '' || req.body.customer_id != ''){
             //create
             const order = await Order.query().insertGraph({
-                product: req.body.product,
+                product_id: req.body.product_id,
                 customer_id: req.body.customer_id,
                 price: req.body.price
             });
@@ -29,7 +49,7 @@ exports.CreateOrder = async (req, res) => {
            return res.status(200).json(order)
         }// if condition ends here
         
-          return  res.status(409).json({message: "please fill all fields"})
+          return  res.status(409).json({message: "cannot create order without customer id or product id"})
             
         }catch (error) {
             console.log(error);

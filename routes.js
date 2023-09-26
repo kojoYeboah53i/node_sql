@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const knex = require('./config/db')
+// const Product = require('./controllers/product')
 
 //register new user
 router.post('/user', async (req, res) => {
@@ -147,6 +148,11 @@ router.post('/employee', async (req, res) => {
       res.status(500).json({ message: 'Internal server error' });
     }
   });
+
+  // //products
+  // router.get('/products', async (req, res) => {
+  //   Product.getProducts(req, res);
+  // })
   
 
 

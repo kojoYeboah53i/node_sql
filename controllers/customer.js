@@ -1,12 +1,27 @@
 const Customer = require('../model/customer')
+// const Product = require('../model/product')
 
 exports.getCustomer = async (req, res) => {
-    //get customer
     
     try {
             // let id = req.params.id;
      const {id } = req.params;
      const customer = await Customer.query().findById(id);
+     if(!customer){
+        throw new Error("failed to get customer, id not found");
+     }
+     res.status(200).json(customer)
+    }catch (error) {
+        console.log(error);
+        res.status(500).send('Server error'); //error
+      }
+}
+// get customer with token value 
+exports.getCustomerWithToken = async (req, res) => {
+    
+    try {
+     const {token } = req.body;
+     const customer = await Customer.query().where('token', token)
      if(!customer){
         throw new Error("failed to get customer, id not found");
      }
@@ -22,7 +37,7 @@ exports.getCustomers = async (req, res) => {
     //get customers
     try {
         
-           const customers = await Customer.query();
+           const customers = await Customer.query().select('*');
            if(!customers){
             throw new Error("check db connection, customer table doesn't exit")
            }
@@ -38,8 +53,8 @@ exports.getCustomers = async (req, res) => {
 
 exports.CreateCustomer = async (req, res) => {
     try {
-        // const {name , city} = req.body;
-        if(req.body.name != '' || req.body.city != ''){
+        //if token is missing abort
+        if( req.body.token != ''){
             //create
             const customer = await Customer.query().insertGraph({
                 name: req.body.name,
@@ -52,7 +67,7 @@ exports.CreateCustomer = async (req, res) => {
            return res.status(200).json(customer)
         }// if condition ends here
         
-          return  res.status(409).json({message: "please fill all fields"})
+          return  res.status(409).json({message: "please provide token"})
             
         }catch (error) {
             console.log(error);
@@ -90,4 +105,7 @@ exports.deleteCustomer = async (req, res) => {
         //
 
    }
+
+
+
 
