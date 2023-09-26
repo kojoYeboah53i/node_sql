@@ -57,6 +57,13 @@ exports.CreateOrder = async (req, res) => {
         }
 }
 
+exports.getOrderWithCustomerId = async (req, res) => {
+    const {customerId } = req.params;
+    const orders = Order.query().select('*').where('customer_id', customerId).orderBy('id');
+    return res.status(200).json(orders)
+
+}
+
 exports.deleteOrder = async (req, res) => {
     //delete Order
 }

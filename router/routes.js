@@ -35,6 +35,11 @@ router.get('/v1/order/:id', (req, res) => {
     Order.getOrder(req, res);
 });
 
+// get all orders with customer Id
+router.get('/v1/orderWithC/:customerId', (req, res) => {
+    Order.getOrderWithCustomerId(req, res);
+});
+
 router.get('/v1/orders', (req, res) => {
     Order.getOrder(req, res);
 });
