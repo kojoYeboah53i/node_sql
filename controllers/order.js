@@ -37,6 +37,13 @@ exports.CreateOrder = async (req, res) => {
     try {
         // const {name , city} = req.body;
         if(req.body.product_id != '' || req.body.customer_id != ''){
+            //check if order is already inserted
+            let product = await Order.query().findById(req.body.product_id)
+            if(product.id){
+                return res.status(409).json({message: "product already inserted"})
+            }
+
+             // product.id while false
             //create
             const order = await Order.query().insertGraph({
                 product_id: req.body.product_id,
