@@ -1,11 +1,25 @@
 # node_sql
+
  nodejs application connected to an sql database
+
+ ## install
+
+ - connection a database
+ - run npm install
+ - run migrations
+ - seed the tables with data
+ - start the application
 
 ## make a migrations file
 
-- knex migrate:make create_users_table
-- knex migrate:make create_users_table --knexfile config/knexfile.js --cwd .
-- knex migrate:latest --knexfile config/knexfile.js
+- npx knex migrate:make create_users_table
+- npx knex migrate:latest               //migrate all tables to the database
+- npx knex migrate:rollback --all      //drop all tables from the database
+
+## make a seeder file
+
+- npx knex seed:make create_user_seeder     //creating new seeder
+- npx knex seed:run                        //seed the tables with data
 
 ## SQL
 
