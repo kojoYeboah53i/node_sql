@@ -1,6 +1,7 @@
 const { Model } = require('objection');
 const knex = require('../config/db')
 const Customer = require('./customer')
+const Product = require('./product')
 Model.knex(knex);
 
 
@@ -15,7 +16,7 @@ class Order extends Model {
                 id: { type: 'integer' },
                 customer_id: { type: 'integer' },
                 price: { type: 'integer' },
-                product: { type: 'string' },
+                product_id: { type: 'integer' },
                 created_at: { type: 'string' },
                 updated_at: { type: 'string' }
             }
@@ -23,15 +24,27 @@ class Order extends Model {
     }
   
     static relationMappings = {
-      owner: {
+      orders: {
         relation: Model.BelongsToOneRelation,
         modelClass: Customer,
         join: {
           from: 'orders.customer_id',
           to: 'customers.id'
         }
-      }
+      },
+
+          //has one product relation
+        products: {
+          relation: Model.HasOneRelation,
+          modelClass: Product,
+          join: {
+            from: 'orders.product_id',
+            to: 'products.id'
+          }
+        }
     };
+
+
   }
 
   module.exports = Order;

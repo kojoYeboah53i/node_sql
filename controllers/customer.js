@@ -22,10 +22,13 @@ exports.getCustomerWithToken = async (req, res) => {
     try {
      const {token } = req.body;
      console.log(token)
-     const customer = await Customer.query().where('token', token)
-     if(!customer){
-        throw new Error("failed to get customer, id not found");
-     }
+     const customer = await Customer.query().where('token', token);
+    //  .first();
+
+    //  if(!customer){
+    //     throw new Error("failed to get customer, id not found");
+    //  }
+    console.log('inside getCustomer with token function')
      console.log(customer)
      res.status(200).json(customer)
     }catch (error) {
