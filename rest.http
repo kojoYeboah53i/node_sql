@@ -78,3 +78,7 @@ Content-Type: application/json
     "email" : "yeboah@mail.com",
     "password" :"admin1234"
 }
+
+
+
+GET https://div-shopping-api-3be1d6359b8d.herokuapp.com

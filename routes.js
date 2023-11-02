@@ -2,6 +2,14 @@ const router = require('express').Router();
 const knex = require('./config/db')
 // const Product = require('./controllers/product')
 
+
+//test api endpoint
+router.get('/', (req, res) => {
+    res.send('Node SQL SHOPPING API IS RUNNING');
+  });
+
+  //get all users
+
 //register new user
 router.post('/user', async (req, res) => {
     try {
