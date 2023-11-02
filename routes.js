@@ -4,7 +4,7 @@ const knex = require('./config/db')
 
 
 //test api endpoint
-router.get('/', (req, res) => {
+router.get('/test', (req, res) => {
     res.send('Node SQL SHOPPING API IS RUNNING');
   });
 

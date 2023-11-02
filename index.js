@@ -9,9 +9,9 @@ const routes = require('./routes')
 require('dotenv').config();
 const multer = require('multer');
 
-// const objection = require('./router/routes')
-// const product = require('./router/product')
-// const knex = require ('./config/db')
+const objection = require('./router/routes')
+const product = require('./router/product')
+const knex = require ('./config/db')
 
 const PORT = process.env.PORT; //server port
 
@@ -88,8 +88,8 @@ app.post('/product-upload', async (req, res) => {
 });
 //api
 app.use('/api', routes)
-// app.use('/shop', objection)
-// app.use('/product', product)
+app.use('/shop', objection)
+app.use('/product', product)
 
 
 //start app on this port

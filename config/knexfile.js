@@ -58,25 +58,6 @@ module.exports = {
     }
   },
 
-  production: {
-    client: 'postgresql',
-    connection: {
-      // url : process.env.DATABASE_URL,
-      database: 'd8npj184tpf03d',
-      host: 'ec2-52-205-55-36.compute-1.amazonaws.com',
-      user:     'zgvczavznaakan',
-      password: '0e5ca56e187d4cb5bee8f4abd8701b67331e8ece9f6b85d7b48bbd2f5ae6184c',
-      port: 5432,
-    },
-
-    migrations: {
-      tableName: 'knex_migrations',
-      directory : './migrations'
-    },
-         seeds: {
-      directory: './seed'
-    }
-  }
 
 };
 
