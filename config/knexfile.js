@@ -48,10 +48,10 @@ module.exports = {
       ssl: { rejectUnauthorized: false },
     },
     migrations: {
-      directory: "./migrations",
+      directory: __dirname + "./config/migrations",
     },
     seeds: {
-      directory: "./seeds",
+      directory: __dirname + "./config/seeds",
     },
   },
 
