@@ -80,5 +80,5 @@ Content-Type: application/json
 }
 
 
-
-GET https://div-shopping-api-3be1d6359b8d.herokuapp.com
+###
+GET https://div-shopping-api-3be1d6359b8d.herokuapp.com/api/test
