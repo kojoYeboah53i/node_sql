@@ -39,24 +39,7 @@ module.exports = {
     }
   },
 
-  
-  development: {
-    client: 'mysql',
-    connection: {
-      user: 'zgvczavznaakan',
-      password: '0e5ca56e187d4cb5bee8f4abd8701b67331e8ece9f6b85d7b48bbd2f5ae6184c', //
-      port: 5432,
-      database: 'd8npj184tpf03d',
-      host: 'ec2-52-205-55-36.compute-1.amazonaws.com'
-    },
-    migrations: {
-      directory : './migrations'
-    },
-    seeds: {
-      directory: './seed'
-      
-    }
-  },
+
 
   production: {
     client: "pg",
@@ -65,10 +48,10 @@ module.exports = {
       ssl: { rejectUnauthorized: false },
     },
     migrations: {
-      directory: __dirname + "./migrations",
+      directory: "./migrations",
     },
     seeds: {
-      directory: __dirname + "./seeds",
+      directory: "./seeds",
     },
   },
 
