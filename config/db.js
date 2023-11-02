@@ -26,18 +26,18 @@ const db = knex(knexfile.development)
 // const knexInstance = knex(knexfile.knex);
 
 
-async function create_users_table() {
-    const tableExists = await db.schema.hasTable('users');
+// async function create_users_table() {
+//     const tableExists = await db.schema.hasTable('users');
     
-        if(!tableExists) {
+//         if(!tableExists) {
     
-           return db.schema.createTable('shopping', (table) => {
+//            return db.schema.createTable('shopping', (table) => {
            
-                }).then(() => {
-                console.log('"shopping" table created');
-                });
-                }
-    }
+//                 }).then(() => {
+//                 console.log('"shopping" table created');
+//                 });
+//                 }
+//     }
 
 //     async function create_employees_table() {
 //         const tableExists = await db.schema.hasTable('employees');
@@ -55,7 +55,7 @@ async function create_users_table() {
 //                     }
         // }
 
-create_users_table();
+// create_users_table();
 // create_employees_table();
 
 
