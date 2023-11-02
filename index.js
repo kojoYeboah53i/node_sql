@@ -5,13 +5,13 @@ const app = express();
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
-const routes = require('./routes')
+// const routes = require('./routes')
 require('dotenv').config();
 const multer = require('multer');
 
-const objection = require('./router/routes')
+// const objection = require('./router/routes')
 // const product = require('./router/product')
-const knex = require ('./config/db')
+// const knex = require ('./config/db')
 
 const PORT = process.env.PORT; //server port
 
@@ -87,8 +87,8 @@ app.post('/product-upload', async (req, res) => {
   }
 });
 //api
-app.use('/api', routes)
-app.use('/shop', objection)
+// app.use('/api', routes)
+// app.use('/shop', objection)
 // app.use('/product', product)
 
 
