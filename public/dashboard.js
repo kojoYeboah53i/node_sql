@@ -2,7 +2,7 @@
 
 window.addEventListener('load', () => {
 
-    console.log('variable.js is working');
+    console.log('dashboard.js is working');
 
     const switched = document.querySelector('.content .header .switch');
     

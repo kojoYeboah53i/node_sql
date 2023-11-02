@@ -60,3 +60,21 @@ Content-Type: application/json
     "customer_id" : 12
 }
 
+
+###
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "auth" : true
+}
+
+
+###
+POST http://localhost:9222/api/login
+Content-Type: application/json
+
+{
+    "email" : "yeboah@mail.com",
+    "password" :"admin1234"
+}

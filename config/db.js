@@ -1,8 +1,30 @@
 const knex = require('knex')
 require('dotenv').config();
+// const mongoose = require('mongoose');
 const knexfile = require('./knexfile')
 
 const db = knex(knexfile.development)
+
+// let uri = 'mongodb+srv://kojoyeboah53i:saints_salvation2@cluster0.sk4iy96.mongodb.net/shopping?retryWrites=true&w=majority'
+// Connect to MongoDB
+// mongoose.connect(uri, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+// const database = mongoose.connection;
+
+// database.on('error', (err) => {
+//   console.error(`MongoDB connection error: ${err}`);
+// });
+
+// database.once('open', () => {
+//   console.log('Connected to MongoDB');
+// });
+
+// Create a Knex instance
+// const knexInstance = knex(knexfile.knex);
+
 
 async function create_users_table() {
     const tableExists = await db.schema.hasTable('users');

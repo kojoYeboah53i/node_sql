@@ -10,9 +10,18 @@ module.exports = {
   //   connection: {
   //     filename: './dev.sqlite3'
   //   },
+  //     seeds: {
+  //     directory: './seed'
+      
+  //   },
   //   useNullAsDefault: true, // Required for SQLite
 
   // },
+
+    // MongoDB configuration
+    mongo: {
+      uri: 'mongodb+srv://kojoyeboah53i:saints_salvation2@cluster0.sk4iy96.mongodb.net/shopping?retryWrites=true&w=majority', // Replace with your MongoDB URI
+    },
 
   staging: {
     client: 'postgresql',
@@ -35,7 +44,7 @@ module.exports = {
     client: 'mysql',
     connection: {
       user: 'root',
-      password: '',
+      password: '', //
       port: 3306,
       database: 'shopping',
       host: '127.0.0.1'
