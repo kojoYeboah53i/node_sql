@@ -3,7 +3,7 @@ require('dotenv').config();
 // const mongoose = require('mongoose');
 const knexfile = require('./knexfile')
 
-const db = knex(knexfile.production)
+const db = knex(knexfile.development)
 
 // let uri = 'mongodb+srv://kojoyeboah53i:saints_salvation2@cluster0.sk4iy96.mongodb.net/shopping?retryWrites=true&w=majority'
 // Connect to MongoDB
